@@ -58,14 +58,14 @@ var userText=document.getElementById("user-text");
 		answer[i] = "_";
 	}
 
-	var lives = 3;
+	// var lives = 3;
 
 	// letters left to be guessed
 	var remainingLetters = word.length;
-
+	var lives = 3
 
   document.onkeyup = function(event) {
-
+  	// lives = 3;
 // game loop
 // while (lives > 0) {
 
@@ -75,16 +75,37 @@ var userText=document.getElementById("user-text");
 	// checking player guess against word 
 	for (var x = 0; x < word.length; x++) {
 		if(word[x] === guess) {
-			answer[x] = guess;
-			// remainingLetters--;
+			answer[x] = guess
+
+			remainingLetters--;
+			// return word[x];
 		}
-		}
-	if (word[x] === guess) {
-		remainingLetters--;
+		console.log(word[x]);
+	
 	}
-	if (guess !=== word[x]) {
+	// console.log(guess)
+	// var n = word.includes(guess)
+	// console.log(n)
+	if (word.includes(guess)=== false) {
+		lives = lives-1;
 		wrongGuess.push(guess);
+
 	}
+	
+
+		// } else {
+
+		// 	wrongGuess.push(guess);
+		// 	lives -1;
+		// }
+		
+
+	// if ( word == guess) {
+	// 	remainingLetters--;
+	// }
+	// if {
+	// 	wrongGuess.push(guess);
+	// }
 
 
 		// else {
@@ -108,7 +129,7 @@ var userText=document.getElementById("user-text");
 	// };
 		
 
-}
+};
 
 
 
