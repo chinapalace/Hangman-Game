@@ -1,43 +1,4 @@
-// window.addEventListener('keydown',function(event){
-// 	console.log(event)
-// });
-
-
-// // object constructor for Songs 
-// function Song(title,guesses,chars,song) {
-// 	this.title = title;
-// 	this.guesses = guesses;
-// 	this.chars = chars;
-// 	this.song = song;
-
-
-// }
-
-// // word check function
-// function wordCheck() {
-// 	let textEntered =
-// }
-
-// // game play function 
-// 	function game() {
-
-// 	}
-// // array for all Song objects
-// var songs = [
-// 	new Song("Loose", 3,5, "assets/songs/Loose.mp3"),
-// 	new Song("Dirt", 2, 4, "assets/songs/Dirt.mp3"),
-// 	new Song("1970", 2, 4, "assets/songs/1970.mp3")
-// ];
-
-// console.log(songs[0]);
-
-// // event listeners for keyboard input
-// document.addEventListener('keypress', game, false);
-
-var userText=document.getElementById("user-text");
-    
-
-
+$(function() {
 
 
 		// array of word choices
@@ -56,85 +17,63 @@ var userText=document.getElementById("user-text");
 
 	for (var i = 0; i < word.length; i++) {
 		answer[i] = "_";
-	}
 
-	// var lives = 3;
+	};
+
 
 	// letters left to be guessed
 	var remainingLetters = word.length;
+	
+	// Player lives
 	var lives = 3
+	var guess;
 
-  document.onkeyup = function(event) {
-  	// lives = 3;
-// game loop
-// while (lives > 0) {
 
-     var guess=event.key;
-     // var guess=String.fromCharCode(event.key)
+// 	event listener for key press
+	window.addEventListener('keydown', function(e) {
+		 var guess=e.key;
 
-	// checking player guess against word 
-	for (var x = 0; x < word.length; x++) {
-		if(word[x] === guess) {
-			answer[x] = guess
+			 // checking player guess against word 
+		for (var x = 0; x < word.length; x++) {
+			if(word[x] === guess) {
+				answer[x] = guess
+				remainingLetters--;
 
-			remainingLetters--;
-			// return word[x];
-		}
-		console.log(word[x]);
-	
-	}
-	// console.log(guess)
-	// var n = word.includes(guess)
-	// console.log(n)
-	if (word.includes(guess)=== false) {
-		lives = lives-1;
-		wrongGuess.push(guess);
+			}
 
-	}
-	
-
-		// } else {
-
-		// 	wrongGuess.push(guess);
-		// 	lives -1;
-		// }
+		};
+									$('<div>')
+		.text(answer)
+		.appendTo('.main')
+		.addClass(".displayLetter")
+		.replaceWith(answer)
+		// checking for player wrong guess
+		 if (word.includes(guess)=== false) {
 		
+			lives = lives-1;
+			// push code to wrong guess array
+			wrongGuess.push(guess);
 
-	// if ( word == guess) {
-	// 	remainingLetters--;
-	// }
-	// if {
-	// 	wrongGuess.push(guess);
-	// }
-
-
-		// else {
-		// 	remainingLetters --;
-		// }
-
-		// else {
-
-		// 	wrongGuess.push(guess);
-		// 	lives -1;
-		// }
-		// }
+		};
 		console.log(lives);
 		console.log(word);
 		console.log(guess);
 		console.log(wrongGuess);
 		console.log(answer);
 		console.log(remainingLetters)
+	});
+console.log(lives);
+		console.log(word);
+		console.log(guess);
+		console.log(wrongGuess);
+		console.log(answer);
+		console.log(remainingLetters)
 
-		// return;
-	// };
-		
+	window.onkeyup = function(event) {
+		$(".displayLetter").text(answer)
+	};
 
-};
-
-
-
-
-
+	});
 
 
 
