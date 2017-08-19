@@ -1,25 +1,26 @@
-/*html {
+html {
   font-size: 10px;
   background: url("../images/iggy.jpeg") bottom center;
   background-size: cover;
-}*/
-.Displayletter {
-/*  display: flex;
-  flex: 1;*/
+}
+body {
+	display: flex;
+  flex: 1;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+
 }
-.key {
-  border: .4rem solid black;
-  border-radius: .5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  transition: all .07s ease;
-  width: 10rem;
+.main {
+	border: 5px solid black;
+  border-radius: 5px;
+  font-size: 100px;
+  padding: 10px;
+
+
+	letter-spacing: : 10px;
   text-align: center;
-  color: white;
+  color: #ffc600;
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
 }

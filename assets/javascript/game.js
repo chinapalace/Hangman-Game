@@ -20,6 +20,11 @@ $(function() {
 
 	};
 
+		$('<div>')
+		.text(answer)
+		.appendTo('.main')
+		.addClass(".displayLetter")
+		.html(answer)
 
 	// letters left to be guessed
 	var remainingLetters = word.length;
@@ -42,11 +47,7 @@ $(function() {
 			}
 
 		};
-									$('<div>')
-		.text(answer)
-		.appendTo('.main')
-		.addClass(".displayLetter")
-		.replaceWith(answer)
+
 		// checking for player wrong guess
 		 if (word.includes(guess)=== false) {
 		
@@ -55,6 +56,7 @@ $(function() {
 			wrongGuess.push(guess);
 
 		};
+		$('.main').html(answer)
 		console.log(lives);
 		console.log(word);
 		console.log(guess);
@@ -69,9 +71,8 @@ console.log(lives);
 		console.log(answer);
 		console.log(remainingLetters)
 
-	window.onkeyup = function(event) {
-		$(".displayLetter").text(answer)
-	};
+
+
 
 	});
 
